@@ -86,9 +86,9 @@ import React from "react";
 
 function Cabecalho() {
   return (
-    <div id="Cabecalho">
-      <h1>TITULO</h1>
-    </div>
+    &lt;div id="Cabecalho"&gt;
+      &lt;h1&gt;TITULO&lt;/h1&gt;
+    &lt;/div&gt;
   );
 }
 
@@ -104,7 +104,7 @@ export default Cabecalho;
           </ul>
           <pre>
 function Saudacao() {
-  return <h1>Bem-vindo ao React!</h1>;
+  return &lt;h1&gt;Bem-vindo ao React!&lt;/h1&gt;;
 }
           </pre>
         </li>
@@ -135,11 +135,11 @@ import Home from "./Home";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+    &lt;Router&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+      &lt;Routes&gt;
+    &lt;/Router&gt;
   );
 }
 
@@ -174,11 +174,11 @@ import Cabecalho from "./Cabecalho";
 
 function Home() {
   return (
-    <div>
-      <Cabecalho />
-      <h1>Bem-vindo à página Home!</h1>
-      <p>Esta é a página inicial! Não tem muita coisa.</p>
-    </div>
+    &lt;div&gt;
+      &lt;Cabecalho /&gt;
+      &lt;h1&gt;Bem-vindo à página Home!&lt;/h1&gt;
+      &lt;p&gt;Esta é a página inicial! Não tem muita coisa.&lt;/p&gt;
+    &lt;/div&gt;
   );
 }
 
