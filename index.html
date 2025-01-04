@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seminário: Introdução ao React</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        padding: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .sub-section {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Seminário: Introdução ao React</h1>
+
+    <div class="section">
+      <h2>1. Introdução ao React (3 minutos)</h2>
+      <p><strong>Responsável:</strong> Pessoa 1</p>
+      <h3>Texto do Slide:</h3>
+      <ul>
+        <li>
+          <strong>O que é React?</strong>
+          <ul>
+            <li>Biblioteca JavaScript criada pelo Facebook.</li>
+            <li>Foco: interfaces de usuário dinâmicas e responsivas.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Por que React?</strong>
+          <ul>
+            <li>Componentes reutilizáveis.</li>
+            <li>Alta produtividade.</li>
+            <li>Interatividade sem recarregar a página inteira.</li>
+          </ul>
+        </li>
+        <li>Grandes empresas que usam React: Facebook, Instagram, Netflix.</li>
+      </ul>
+      <h3>Texto para falar:</h3>
+      <p>
+        React é uma biblioteca JavaScript criada pelo Facebook, voltada para a
+        criação de interfaces de usuário que são dinâmicas e responsivas. Ele é
+        muito usado porque permite reutilizar componentes, o que torna o
+        desenvolvimento mais organizado e produtivo. Além disso, com React, a
+        página atualiza automaticamente partes específicas quando os dados
+        mudam, sem precisar recarregar tudo. Um exemplo de quem usa React são
+        empresas como Facebook, Instagram e Netflix.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>2. Principais Conceitos (5 minutos)</h2>
+      <p><strong>Responsável:</strong> Pessoa 2</p>
+      <h3>Texto do Slide:</h3>
+      <ul>
+        <li>
+          <strong>Componentes:</strong>
+          <ul>
+            <li>"Blocos de construção" da interface.</li>
+            <li>Reutilizáveis.</li>
+            <li>Exemplo:</li>
+          </ul>
+          <pre>
+import React from "react";
+
+function Cabecalho() {
+  return (
+    <div id="Cabecalho">
+      <h1>TITULO</h1>
+    </div>
+  );
+}
+
+export default Cabecalho;
+          </pre>
+        </li>
+        <li>
+          <strong>JSX:</strong>
+          <ul>
+            <li>Mistura HTML e JavaScript.</li>
+            <li>Facilita a leitura e escrita do código.</li>
+            <li>Exemplo:</li>
+          </ul>
+          <pre>
+function Saudacao() {
+  return <h1>Bem-vindo ao React!</h1>;
+}
+          </pre>
+        </li>
+      </ul>
+      <h3>Texto para falar:</h3>
+      <p>
+        Um dos conceitos principais do React são os componentes. Eles são como
+        peças de Lego: cada componente é uma parte independente da interface que
+        pode ser criada e reutilizada. Por exemplo, aqui temos um componente
+        simples chamado <code>Cabecalho</code>, que retorna um título na
+        tela. Outro conceito importante é o JSX, que é uma sintaxe especial do
+        React. Ele mistura HTML e JavaScript no mesmo código, o que facilita a
+        leitura e escrita. Por exemplo, aqui temos o JSX que cria um elemento
+        HTML diretamente dentro do código JavaScript. Com JSX, tudo fica mais
+        intuitivo.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>3. Exemplo Prático (5 minutos)</h2>
+      <p><strong>Responsável:</strong> Pessoa 3</p>
+      <h3>Texto do Slide:</h3>
+      <pre>
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+      </pre>
+      <ul>
+        <li><strong>Explicação:</strong></li>
+        <ul>
+          <li>
+            <code>App</code>: Gerencia as rotas e define qual componente será exibido para cada URL.
+          </li>
+          <li>
+            <code>ReactDOM.render</code>: Renderiza o componente no elemento HTML com ID <code>root</code>.
+          </li>
+        </ul>
+      </ul>
+      <h3>Texto para falar:</h3>
+      <p>
+        Aqui está um exemplo que inclui navegação usando o React Router. Primeiro,
+        configuramos o `Router` e criamos uma rota para a página inicial. O
+        componente <code>Home</code> é renderizado quando acessamos a URL " / ".
+        Este é um exemplo de como estruturar aplicações React com múltiplas páginas.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>4. Componentes Reutilizáveis</h2>
+      <p><strong>Exemplo:</strong></p>
+      <pre>
+import React from "react";
+import Cabecalho from "./Cabecalho";
+
+function Home() {
+  return (
+    <div>
+      <Cabecalho />
+      <h1>Bem-vindo à página Home!</h1>
+      <p>Esta é a página inicial! Não tem muita coisa.</p>
+    </div>
+  );
+}
+
+export default Home;
+      </pre>
+      <p>
+        Este exemplo demonstra como usar componentes reutilizáveis. Aqui, o
+        componente <code>Cabecalho</code> é utilizado dentro do <code>Home</code>
+        para exibir um cabeçalho comum. Isso facilita a consistência visual em
+        toda a aplicação.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>5. Conclusão e Perguntas (3 minutos)</h2>
+      <p><strong>Responsáveis:</strong> Todos</p>
+      <h3>Texto do Slide:</h3>
+      <ul>
+        <li>Recapitulação:</li>
+        <ul>
+          <li>React: Biblioteca para interfaces dinâmicas.</li>
+          <li>Principais conceitos: Componentes e JSX.</li>
+          <li>Exemplo prático: Criando uma aplicação simples com navegação.</li>
+        </ul>
+        <li>Perguntas?</li>
+      </ul>
+      <h3>Texto para falar:</h3>
+      <p>
+        Para concluir, recapitulando o que vimos: React é uma biblioteca
+        poderosa para criar interfaces dinâmicas e interativas. Os conceitos
+        mais importantes são os componentes, que são blocos reutilizáveis, e o
+        JSX, que facilita o código misturando HTML e JavaScript. Também vimos um
+        exemplo prático de como estruturar uma aplicação com navegação. Agora,
+        vamos abrir para perguntas. Quem quiser, pode perguntar ou pedir para
+        repetir algum exemplo!
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Dicas Finais</h2>
+      <ol>
+        <li>
+          <strong>Prepare os exemplos com antecedência:</strong> Deixe o código
+          pronto para não perder tempo digitando durante a apresentação.
+        </li>
+        <li>
+          <strong>Pratique a apresentação:</strong> Cronometrem para garantir
+          que cada pessoa fique dentro do tempo.
+        </li>
+        <li>
+          <strong>Simplifique:</strong> Não entre em detalhes avançados, como
+          hooks ou estados, para manter o foco no básico.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
